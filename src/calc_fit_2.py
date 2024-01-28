@@ -43,6 +43,7 @@ def calc_fit2(data) -> float:
     b2 = calc_b2(data, a2)
     rms = root_mean_square2(data, a2, b2)
     predic = predict2(data, a2, b2)
+    print()
     print("Fit2")
     print("   X = {:.2f} Y {} {:.2f}".format(a2, "-" if b2 < 0 else "+", b2))
     print("   Root-mean-square deviation: {:.2f}".format(rms))

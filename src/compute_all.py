@@ -1,6 +1,7 @@
 from src.parsing import get_data
 from src.calc_fit_1 import calc_fit1
 from src.calc_fit_2 import calc_fit2
+from src.calc_correlation import calc_correlation
 
 
 def compute_all(abrs: list[str]) -> int:
@@ -14,11 +15,11 @@ def compute_all(abrs: list[str]) -> int:
     total[0].sort()
     print("Country:", end="")
     for country in total[0]:
-        print(f" {country}", end='')
+        print(f" {country}", end="")
         if country != total[0][-1]:
             print(",", end="")
     print()
     a1, b1 = calc_fit1(total[1:][::-1])
-    a2, b2 = calc_fit2(total[1:])
-    # calc_correlation(a1, b1, a2, b2)
+    calc_fit2(total[1:])
+    calc_correlation(data[1:][::-1], a1, b1)
     return 0
