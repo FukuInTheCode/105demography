@@ -5,7 +5,7 @@ import sys
 def get_data(abrs: list[str]) -> list[list[str]]:
     listData = []
 
-    with open('../assets/105demography_data.csv', 'r') as csvfile:
+    with open('assets/105demography_data.csv', 'r') as csvfile:
         content = csv.reader(csvfile, delimiter=';')
         header = next(content)
         abrs_index = header.index('Country Code')
