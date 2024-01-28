@@ -8,8 +8,9 @@ def compute_all(abrs: list[str]) -> int:
     for i in range(57):
         for country in data:
             total[1][i] += int(country[1 + i])
+        total[1][i] /= 1e6
     total[0].sort()
-    print("Country:")
+    print("Country:", end="")
     for country in total[0]:
         print(f" {country}", end="")
         if country != total[0][-1]:
