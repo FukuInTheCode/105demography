@@ -29,19 +29,25 @@ def calc_b1(data) -> float:
 def root_mean_square(data, a1, b1) -> float:
     n = 57
     values = [data[i][1] for i in range(n)]
-    predic = [a1 * data[i][0] + b1 for i in range(n)]
-    rms = math.sqrt(sum((values[i] - predic[i]) ** 2 for i in range(n)) / n)
+    predic_rms = [a1 * data[i][0] + b1 for i in range(n)]
+    rms = math.sqrt(sum((values[i] - predic_rms[i]) ** 2 for i in range(n)) / n)
 
     return rms
 
 
-def calc_fit1(data) -> int:
+def predict(a1, b1) -> float:
+    predi = a1 * 2050 + b1
+    return predi
+
+
+def calc_fit1(data) -> float:
     a1 = calc_a1(data)
     b1 = calc_b1(data)
     rms = root_mean_square(data, a1, b1)
+    predic = predict(a1, b1)
     print("Fit1")
     print(f"\tY = {a1} X - {b1}")
     print(f"\tRoot-mean-square deviation: {rms}")
-    print(f"\tPopulation in 2050: ")
-    
+    print(f"\tPopulation in 2050: {predic}")
+
     return a1, b1
