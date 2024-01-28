@@ -21,5 +21,5 @@ def compute_all(abrs: list[str]) -> int:
     print()
     a1, b1 = calc_fit1(total[1:][::-1])
     calc_fit2(total[1:])
-    calc_correlation(data[1:][::-1], a1, b1)
+    calc_correlation(total[1:][::-1], a1, b1)
     return 0
