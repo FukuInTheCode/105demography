@@ -26,7 +26,7 @@ def calc_b1(data) -> float:
     return b1
 
 
-def root_mean_square(data, a1, b1) -> int:
+def root_mean_square(data, a1, b1) -> float:
     n = 57
     values = [data[i][1] for i in range(n)]
     predic = [a1 * data[i][0] + b1 for i in range(n)]
@@ -39,4 +39,9 @@ def calc_fit1(data) -> int:
     a1 = calc_a1(data)
     b1 = calc_b1(data)
     rms = root_mean_square(data, a1, b1)
+    print("Fit1")
+    print(f"\tY = {a1} X - {b1}")
+    print(f"\tRoot-mean-square deviation: {rms}")
+    print(f"\tPopulation in 2050: ")
+    
     return a1, b1
