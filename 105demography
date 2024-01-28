@@ -2,6 +2,7 @@
 
 from sys import argv
 from src.display_usage import display_usage
+from src.compute_all import compute_all
 
 def main() -> int:
     if len(argv) < 2:
