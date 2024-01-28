@@ -38,15 +38,14 @@ def predict2(data, a2, b2) -> float:
     return predi
 
 
-def calc_fit2(data) -> float:
+def calc_fit2(data) -> None:
     a2 = calc_a2(data)
     b2 = calc_b2(data, a2)
     rms = root_mean_square2(data, a2, b2)
     predic = predict2(data, a2, b2)
-    print()
     print("Fit2")
     print("   X = {:.2f} Y {} {:.2f}".format(a2, "-" if b2 < 0 else "+", b2))
     print("   Root-mean-square deviation: {:.2f}".format(rms))
     print("   Population in 2050: {:.2f}".format(predic))
 
-    return a2, b2
+    return
